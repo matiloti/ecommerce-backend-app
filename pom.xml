@@ -57,4 +57,22 @@
 			<version>2.8.3</version>
 		</dependency>
 	</dependencies>
+	
+	<!-- Profiles allow us to use placeholders in application.properties for DB properties -->
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<db.url>jdbc:h2:mem:testdb</db.url>
+				<db.username>sa</db.username>
+				<db.password>password</db.password>
+				<db.driver-class-name>org.h2.Driver</db.driver-class-name>
+			</properties>
+		</profile>
+		
+		<!-- If we had a develop, integration or production environment we could place more profiles with other properties values -->
+	</profiles>
 </project>
