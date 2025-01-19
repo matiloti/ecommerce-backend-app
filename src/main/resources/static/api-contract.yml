@@ -1,0 +1,89 @@
+openapi: 3.0.3
+info:
+  title: Ecommerce Store
+  description: |-
+    This is an ecommerce store API
+  contact:
+    email: matiaslotitoralli@gmail.com
+  version: 0.0.1-SNAPSHOT
+servers:
+  - url: http://localhost:8080
+tags:
+  - name: prices
+    description: Access to ecommerce shop prices
+paths:
+  /prices/getProductPriceByDate:
+    get:
+      tags:
+        - prices
+      summary: Gets the top priority price for a product of a brand on a given date
+      operationId: getProductPriceByDate
+      parameters:
+        - name: productId
+          in: query
+          description: Product ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+            example: 35455
+        - name: brandId
+          in: query
+          description: Brand ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+            example: 1
+        - name: date
+          in: query
+          description: The date on which the price applies
+          required: true
+          schema:
+            type: string
+            format: date-time
+            example: 2020-12-30T23:59:59
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Price'
+        '204':
+          description: Price does not exist (no content)
+        '400':
+          description: Bad request
+        '500':
+          description: Unexpected server error
+components:
+  schemas:
+    Price:
+      type: object
+      properties:
+        productId:
+          type: integer
+          format: int64
+          example: 35455
+        brandId:
+          type: integer
+          format: int64
+          example: 1
+        priceList:
+          type: integer
+          format: int64
+          example: 1
+        startDate:
+          type: string
+          format: date-time
+          example: 2020-06-14 14:00:00
+        endDate:
+          type: string
+          format: date-time
+          example: 2020-12-31 23:59:59
+        price:
+          type: number
+          format: double
+          example: 35.50
