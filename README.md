@@ -1,5 +1,11 @@
 # ecommerce-backend-app
 
+## How to run the application
+Execute `mvn clean install` in the project directory in order to install the dependencies and run all tests.
+Execute `mvn spring-boot:run` in the project directory in order to run the project.
+
+## System Analysis
+
 ### System Definition
 The system described is a small backend application for an ecommerce shop.
 
@@ -28,11 +34,11 @@ The database consist of PRICES table, which can be defined as follows:
 ##### PRICES
 | Column Name    | Column Type                |
 |----------------|----------------------------|
-| brandId        | INTEGER (fk to BRAND table) |
-| startDate      | TIMESTAMP                 |
-| endDate        | TIMESTAMP                 |
-| priceList      | INTEGER (fk to PRICE_LIST table) |
-| productId      | INTEGER (fk to PRODUCTS table)   |
+| brand_id       | INTEGER (fk to BRAND table) |
+| start_date     | TIMESTAMP                 |
+| end_date       | TIMESTAMP                 |
+| price_list     | INTEGER (fk to PRICE_LIST table) |
+| product_id     | INTEGER (fk to PRODUCTS table)   |
 | priority       | INTEGER                   |
 | price          | DECIMAL(6, 2)            |
 | currency       | VARCHAR(3)               |
