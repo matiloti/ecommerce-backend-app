@@ -12,12 +12,12 @@ tags:
   - name: prices
     description: Access to ecommerce shop prices
 paths:
-  /prices/getPriceForProductByDate:
+  /prices/getProductPriceByDate:
     get:
       tags:
         - prices
       summary: Gets the top priority price for a product of a brand on a given date
-      operationId: getPriceForProductByDate
+      operationId: getProductPriceByDate
       parameters:
         - name: productId
           in: query
