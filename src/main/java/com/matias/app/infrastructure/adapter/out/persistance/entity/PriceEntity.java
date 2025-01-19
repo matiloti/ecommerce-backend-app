@@ -19,7 +19,7 @@ import lombok.Data;
  * So, to avoid fetching unnecessary data, we only declare the required fields (the IDs).
  */
 @Entity
-@Table(name = "PRICES")
+@Table(name = "prices")
 @IdClass(PriceEntityPk.class)
 @Data
 public class PriceEntity {
@@ -43,7 +43,7 @@ public class PriceEntity {
 	private String currency;
 
 	@NotNull
-	private Integer priceList;
+	private Long priceList;
 
 	@NotNull
 	private Double price;
