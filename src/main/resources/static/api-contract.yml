@@ -7,7 +7,7 @@ info:
     email: matiaslotitoralli@gmail.com
   version: 0.0.1-SNAPSHOT
 servers:
-  - url: https://localhost:8080
+  - url: http://localhost:8080
 tags:
   - name: prices
     description: Access to ecommerce shop prices
@@ -42,7 +42,7 @@ paths:
           schema:
             type: string
             format: date-time
-            example: 2020-12-30 23:59:59
+            example: 2020-12-30T23:59:59
       responses:
         '200':
           description: Successful operation
@@ -52,10 +52,10 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Price'
+        '204':
+          description: Price does not exist (no content)
         '400':
           description: Bad request
-        '404':
-          description: Price does not exist
         '500':
           description: Unexpected server error
 components:
