@@ -17,6 +17,12 @@ public class ProductPriceByDateResponse {
 	private LocalDateTime endDate;
 	private Double price;
 	
+	/**
+	 * Maps a ProductPriceByDateResponseDTO from application layer into a
+	 * ProductPriceByDateResponse of infrastructure layer.
+	 * @param response The response from the application layer to map
+	 * @return The mapped response to infrastructure layer
+	 */
 	public static ProductPriceByDateResponse mapFromApplication(ProductPriceByDateResponseDTO response) {
 		return ProductPriceByDateResponse.builder()
 				.brandId(response.getBrandId())
