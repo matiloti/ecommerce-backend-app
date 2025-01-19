@@ -2,6 +2,7 @@
 
 ## How to run the application
 Execute `mvn clean install` in the project directory in order to install the dependencies and run all tests.
+
 Execute `mvn spring-boot:run` in the project directory in order to run the project.
 
 ## System Analysis
