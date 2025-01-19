@@ -5,7 +5,6 @@ import java.util.Optional;
 import com.matias.app.application.in.dto.request.ProductPriceByDateRequestDTO;
 import com.matias.app.application.in.dto.response.ProductPriceByDateResponseDTO;
 import com.matias.app.application.out.persistance.IPriceRepositoryPort;
-import com.matias.app.domain.model.Price;
 
 public class QueryPricesUseCase implements IQueryPricesUseCase {
 

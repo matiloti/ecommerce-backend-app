@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 
 import lombok.Data;
 
+@SuppressWarnings("serial")
 @Data
 public class PriceEntityPk implements Serializable {
 	private Long brandId;
