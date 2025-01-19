@@ -2,6 +2,10 @@ package com.matias.app.infrastructure.adapter.out.persistance.entity;
 
 import java.time.LocalDateTime;
 
+import com.matias.app.domain.model.Brand;
+import com.matias.app.domain.model.Price;
+import com.matias.app.domain.model.PriceList;
+import com.matias.app.domain.model.Product;
 import com.matias.app.infrastructure.adapter.out.persistance.entity.pk.PriceEntityPk;
 
 import jakarta.persistence.Entity;
@@ -50,4 +54,16 @@ public class PriceEntity {
 	
 	private LocalDateTime lastUpdate;
 	private String lastUpdateBy;
+	
+	public Price mapToDomain() {
+		return Price.builder()
+				.brand(Brand.builder().id(brandId).build())
+				.product(Product.builder().id(productId).build())
+				.startDate(startDate)
+				.endDate(endDate)
+				.priority(priority)
+				.currency(currency)
+				.priceList(PriceList.builder().id(priceList).build())
+				.price(price).build();
+	}
 }

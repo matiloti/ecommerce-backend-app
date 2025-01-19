@@ -1,5 +1,7 @@
 package com.matias.app.infrastructure.adapter.in.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +25,9 @@ public class PriceService implements IPriceService {
 	@Autowired
 	IQueryPricesUseCase queryPricesUseCase;
 	
-	public ProductPriceByDateResponse getPriceForProductByDate(ProductPriceByDateRequest request) {
-		return null;
+	public Optional<ProductPriceByDateResponse> getPriceForProductByDate(ProductPriceByDateRequest request) {
+		return this.queryPricesUseCase.getProductPriceByDate(request.mapToApplication())
+				.map(ProductPriceByDateResponse::mapFromApplication);
 	}
 	
 	// Future services which may implement @Transactional annotation...

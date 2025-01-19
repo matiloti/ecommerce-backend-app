@@ -10,6 +10,8 @@ import com.matias.app.infrastructure.adapter.in.rest.request.ProductPriceByDateR
 import com.matias.app.infrastructure.adapter.in.rest.response.ProductPriceByDateResponse;
 import com.matias.app.infrastructure.adapter.in.service.IPriceService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/prices")
 public class PriceController {
@@ -24,7 +26,14 @@ public class PriceController {
 	
 	@GetMapping("/getProductPriceByDate")
 	public ResponseEntity<ProductPriceByDateResponse> 
-		getProductPriceByDate(ProductPriceByDateRequest request) {
-		return null;
+		getProductPriceByDate(@Valid ProductPriceByDateRequest request) {
+		
+		try {
+			return this.priceService.getPriceForProductByDate(request)
+				.map(ResponseEntity::ok)
+				.orElse(ResponseEntity.noContent().build());
+		} catch(Exception e) {
+			return ResponseEntity.internalServerError().build();
+		}
 	}
 }

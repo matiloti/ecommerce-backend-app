@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.matias.app.application.in.usercase.IQueryPricesUseCase;
 import com.matias.app.application.in.usercase.QueryPricesUseCase;
-import com.matias.app.application.out.PriceRepositoryPort;
+import com.matias.app.application.out.persistance.IPriceRepositoryPort;
 
 /**
  * This class configures the system.
@@ -25,7 +25,7 @@ import com.matias.app.application.out.PriceRepositoryPort;
 public class AppConfig {
 	
 	@Autowired
-	private PriceRepositoryPort priceRepository;
+	private IPriceRepositoryPort priceRepository;
 	
 	@Bean
 	public IQueryPricesUseCase queryPricesUseCase() {
