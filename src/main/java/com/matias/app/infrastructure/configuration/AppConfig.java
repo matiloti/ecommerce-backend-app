@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.matias.app.application.in.PriceService;
-import com.matias.app.application.in.PriceServiceImpl;
+import com.matias.app.application.in.usercase.IQueryPricesUseCase;
+import com.matias.app.application.in.usercase.QueryPricesUseCase;
 import com.matias.app.application.out.PriceRepositoryPort;
 
 /**
@@ -28,8 +28,8 @@ public class AppConfig {
 	private PriceRepositoryPort priceRepository;
 	
 	@Bean
-	public PriceService priceService() {
-		return new PriceServiceImpl(this.priceRepository);
+	public IQueryPricesUseCase queryPricesUseCase() {
+		return new QueryPricesUseCase(this.priceRepository);
 	}
 	
 }
