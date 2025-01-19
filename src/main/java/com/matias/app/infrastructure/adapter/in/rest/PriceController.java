@@ -29,6 +29,11 @@ public class PriceController {
 	@Autowired
 	private IPriceService priceService;
 	
+	/**
+	 * Gets the top priority price for a product of a brand given a date.
+	 * @param request A ProductPriceByDateRequest object
+	 * @return The ProductPriceByDateResponse wrapped in ResponseEntity object
+	 */
 	@GetMapping("/getProductPriceByDate")
 	public ResponseEntity<ProductPriceByDateResponse> 
 		getProductPriceByDate(@Valid ProductPriceByDateRequest request) {

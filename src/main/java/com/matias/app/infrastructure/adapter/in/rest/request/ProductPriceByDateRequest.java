@@ -20,7 +20,12 @@ public class ProductPriceByDateRequest {
 
 	@NotNull
 	private LocalDateTime date;
-	
+
+	/**
+	 * Maps this ProductPriceByDateRequest from the infrastructure layer to a
+	 * ProductPriceByDateRequestDTO of the application layer.
+	 * @return The mapped response to the application layer
+	 */
 	public ProductPriceByDateRequestDTO mapToApplication() {
 		return ProductPriceByDateRequestDTO.builder()
 				.brandId(brandId)

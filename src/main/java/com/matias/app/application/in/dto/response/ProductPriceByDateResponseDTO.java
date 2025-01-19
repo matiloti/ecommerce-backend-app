@@ -17,6 +17,12 @@ public class ProductPriceByDateResponseDTO {
 	private LocalDateTime endDate;
 	private Double price;
 	
+	/**
+	 * Map a Price object from domain layer into a ProductPriceByDateResponseDTO
+	 * from application layer.
+	 * @param price The price from the domain layer to map
+	 * @return The object mapped to a response of application layer
+	 */
 	public static ProductPriceByDateResponseDTO mapFromDomain(Price price) {
 		return ProductPriceByDateResponseDTO.builder()
 				.brandId(price.getBrand() == null ? null : price.getBrand().getId())
