@@ -17,8 +17,9 @@ public class QueryPricesUseCase implements IQueryPricesUseCase {
 	
 	@Override
 	public Optional<ProductPriceByDateResponseDTO> getProductPriceByDate(ProductPriceByDateRequestDTO request) {
-		Optional<Price> priceOpt = this.priceRepository.getProductPriceByDate(request.getBrandId(), request.getProductId(), request.getDate());
-		return priceOpt.map(ProductPriceByDateResponseDTO::mapFromDomain);
+		return this.priceRepository
+				.getProductPriceByDate(request.getBrandId(), request.getProductId(), request.getDate())
+				.map(ProductPriceByDateResponseDTO::mapFromDomain);
 	}
 
 }
