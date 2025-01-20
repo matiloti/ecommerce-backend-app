@@ -10,7 +10,7 @@
   
 	<groupId>com.matias</groupId>
 	<artifactId>ecommerce-backend-app</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<name>ecommerce-backend-app</name>
 
 	<properties>
