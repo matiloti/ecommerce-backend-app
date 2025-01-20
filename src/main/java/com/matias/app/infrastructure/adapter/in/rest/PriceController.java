@@ -33,7 +33,7 @@ public class PriceController {
 	 * @param request A ProductPriceByDateRequest object
 	 * @return The ProductPriceByDateResponse wrapped in ResponseEntity object
 	 */
-	@GetMapping("/getProductPriceByDate")
+	@GetMapping
 	public ResponseEntity<ProductPriceByDateResponse> 
 		getProductPriceByDate(@Valid ProductPriceByDateRequest request) {
 		try {

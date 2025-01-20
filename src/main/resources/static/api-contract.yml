@@ -12,7 +12,7 @@ tags:
   - name: prices
     description: Access to ecommerce shop prices
 paths:
-  /prices/getProductPriceByDate:
+  /prices:
     get:
       tags:
         - prices
