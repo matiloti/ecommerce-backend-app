@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 import com.matias.app.application.in.usercase.IQueryPricesUseCase;
 import com.matias.app.application.in.usercase.QueryPricesUseCase;
 import com.matias.app.application.out.persistance.IPriceRepositoryPort;
+import com.matias.app.domain.service.IPriceService;
+import com.matias.app.domain.service.PriceService;
 
 /**
  * This class configures the system.
@@ -31,8 +33,13 @@ public class AppConfig {
 	private IPriceRepositoryPort priceRepository;
 	
 	@Bean
+	public IPriceService priceDomainService() {
+		return new PriceService();
+	}
+	
+	@Bean
 	public IQueryPricesUseCase queryPricesUseCase() {
-		return new QueryPricesUseCase(this.priceRepository);
+		return new QueryPricesUseCase(this.priceRepository, priceDomainService());
 	}
 	
 }
