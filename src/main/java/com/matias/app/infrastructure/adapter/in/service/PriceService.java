@@ -5,6 +5,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.matias.app.application.exception.ApplicationException;
+import com.matias.app.application.exception.InfrastructureException;
 import com.matias.app.application.in.usercase.IQueryPricesUseCase;
 import com.matias.app.infrastructure.adapter.in.rest.request.ProductPriceByDateRequest;
 import com.matias.app.infrastructure.adapter.in.rest.response.ProductPriceByDateResponse;
@@ -25,10 +27,12 @@ public class PriceService implements IPriceService {
 	@Autowired
 	IQueryPricesUseCase queryPricesUseCase;
 	
-	public Optional<ProductPriceByDateResponse> getPriceForProductByDate(ProductPriceByDateRequest request) {
+	public Optional<ProductPriceByDateResponse> 
+		getPriceForProductByDate(ProductPriceByDateRequest request) 
+			throws ApplicationException, InfrastructureException {
 		return this.queryPricesUseCase.getProductPriceByDate(request.mapToApplication())
 				.map(ProductPriceByDateResponse::mapFromApplication);
 	}
 	
-	// Future services which may implement @Transactional annotation...
+	// Future services which may implement @Transactional annotation or other Spring-related annotations...
 }

@@ -52,8 +52,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Price'
-        '204':
-          description: Price does not exist (no content)
+        '404':
+          description: Price not found
         '400':
           description: Bad request
         '500':
