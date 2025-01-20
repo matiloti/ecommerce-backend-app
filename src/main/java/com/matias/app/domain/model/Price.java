@@ -16,4 +16,6 @@ public class Price {
 	private String currency;
 	private PriceList priceList;
 	private Double price;
+
+	// Domain logic or validations here...
 }

@@ -16,7 +16,7 @@ public interface PriceJpaRepository extends JpaRepository<PriceEntity, PriceEnti
 	 * @param brandId The brand ID of the price
 	 * @param productId The product ID of the price
 	 * @param date The date in which the price applies
-	 * @return Returns PriceEntity object.
+	 * @return Returns PriceEntity optional object.
 	 */
 	@Query("""
 			SELECT p 
