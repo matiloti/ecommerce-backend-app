@@ -9,7 +9,7 @@ public interface IPriceService {
 	/**
 	 * Gets, from the application layer, the top priority price for a product of a brand given a date.
 	 * @param request A ProductPriceByDateRequest object
-	 * @return A ProductPriceByDateResponse object
+	 * @return A ProductPriceByDateResponse optional object
 	 */
 	public Optional<ProductPriceByDateResponse> getPriceForProductByDate(ProductPriceByDateRequest request);
 }

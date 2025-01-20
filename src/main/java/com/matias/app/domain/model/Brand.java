@@ -9,5 +9,6 @@ public class Brand {
 	private Long id;
 	private String name;
 	
-	// Potentially relevant future data (like nif, accounts...) or domain model validations...
+	// Potentially relevant future data (like nif, accounts...)
+	// Domain logic or validations here...
 }

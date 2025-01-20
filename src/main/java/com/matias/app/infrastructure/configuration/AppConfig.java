@@ -15,11 +15,14 @@ import com.matias.app.application.out.persistance.IPriceRepositoryPort;
  * the infrastructure layer to create it's beans and inject the required collaborators 
  * (bean dependencies) into them for other beans to use them.
  * 
- * For example, PriceController (a bean from the infrastructure layer) uses PriceService 
- * (not a bean from application layer). Thus, here we declare the priceService bean for 
- * the PriceController to use it. Also, priceService requires the priceRepository collaborator, 
- * so its injected too (a PriceRepositoryPort bean already exists in the IoC container, 
- * so its @Autowired into a field directly).
+ * </br>
+ * </br>
+ * 
+ * For example, {@code PriceService} (a bean from the infrastructure layer) uses {@code IQueryPricesUseCase} 
+ * (not a bean from application layer). Thus, here we declare the {@code queryPricesUseCase} bean for 
+ * the {@code PriceService} to use it. Also, {@code queryPricesUseCase} requires the {@code priceRepository} 
+ * collaborator, so its injected too (a {@code PriceRepositoryPort} bean already exists in the IoC container, 
+ * {@code JpaPriceRepositoryAdapter}, so its {@code @Autowired} into a field directly).
  */
 @Configuration
 public class AppConfig {

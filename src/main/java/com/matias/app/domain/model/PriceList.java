@@ -8,5 +8,6 @@ import lombok.Data;
 public class PriceList {
 	private Long id;
 	
-	// Potentially relevant future data (like percentage, creationDate...) or domain model validations...
+	// Potentially relevant future data (like percentage, creationDate...)
+	// Domain logic or validations here...
 }
