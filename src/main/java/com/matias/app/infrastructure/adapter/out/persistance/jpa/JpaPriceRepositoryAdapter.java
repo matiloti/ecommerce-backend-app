@@ -13,9 +13,9 @@ import com.matias.app.domain.model.Price;
 import com.matias.app.infrastructure.adapter.out.persistance.entity.PriceEntity;
 
 @Repository
-public class PriceJpaRepositoryAdapter implements IPriceRepositoryPort {
+public class JpaPriceRepositoryAdapter implements IPriceRepositoryPort {
 
-	private static final Logger logger = LoggerFactory.getLogger(PriceJpaRepositoryAdapter.class);
+	private static final Logger logger = LoggerFactory.getLogger(JpaPriceRepositoryAdapter.class);
 
 	@Autowired
 	private PriceJpaRepository jpaPriceRepository;
