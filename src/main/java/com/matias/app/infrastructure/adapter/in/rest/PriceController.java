@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.matias.app.infrastructure.adapter.in.rest.request.ProductPriceByDateRequest;
 import com.matias.app.infrastructure.adapter.in.rest.response.ProductPriceByDateResponse;
 import com.matias.app.infrastructure.adapter.in.service.IPriceService;
-import com.matias.app.infrastructure.adapter.out.persistance.jpa.JpaPriceRepositoryAdapter;
 
 import jakarta.validation.Valid;
 
@@ -19,7 +18,7 @@ import jakarta.validation.Valid;
 @RequestMapping("/prices")
 public class PriceController {
 
-	private static final Logger logger = LoggerFactory.getLogger(JpaPriceRepositoryAdapter.class);
+	private static final Logger logger = LoggerFactory.getLogger(PriceController.class);
 
 	/**
 	 * Controller depends on a Spring service bean in the infrastructure layer
