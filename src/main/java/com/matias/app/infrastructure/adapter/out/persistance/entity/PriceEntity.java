@@ -17,8 +17,12 @@ import lombok.Data;
 
 /**
  * We could declare this class with references to classes like BrandEntity, ProductEntity, etc.
- * However, we only require this data from the repository and creating @ManyToOne relationships
- * would trigger Hibernate to fetch unnecessary data when accessing the brand and product IDs. 
+ * However, we only require this data from the repository and creating {@code @ManyToOne} or
+ * {@code @OneToOne} relationships would trigger Hibernate to fetch unnecessary data when 
+ * accessing the brand and product IDs. 
+ * 
+ * </br>
+ * </br>
  * 
  * So, to avoid fetching unnecessary data, we only declare the required fields (the IDs).
  */

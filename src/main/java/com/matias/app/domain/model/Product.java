@@ -8,5 +8,6 @@ import lombok.Data;
 public class Product {
 	private Long id;
 	
-	// Potentially relevant future data (like name, sku...) or domain model validations...
+	// Potentially relevant future data (like name, sku...)
+	// Domain logic or validations here...
 }
